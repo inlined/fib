@@ -487,8 +487,8 @@
         "affectsGlobalScope": false
       },
       "./src/function.ts": {
-        "version": "1b71804cdd2fa729f08300a0abb6a19ac931b538493de406c60519a7e2038ee8",
-        "signature": "dd9a8f5b0226c99ef69b0f24fe083151b5c87b4d71c354f51bf56d38f90d318c",
+        "version": "cd420e614a5ce4fd391a31aa2a50f6da6b47844a14ffca5c459c6689ecd415d9",
+        "signature": "adae0a19ee02e90ef50571aa49a210e99e6577a65ea96c9a61b01216b45e7421",
         "affectsGlobalScope": false
       },
       "./node_modules/@google-cloud/trace-agent/build/src/config.d.ts": {
@@ -532,7 +532,7 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "8a053917bd2005654e664007c62253aab5df1c93744ae52fd4f30a56eb9b357a",
+        "version": "477307714e03b591303b8fe7e38f114977cadb93f8275ec6486deee6bf86d873",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       }

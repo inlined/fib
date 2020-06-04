@@ -1,9 +1,21 @@
 import express from 'express';
 import * as request from 'request-promise';
 
-const host = process.env['HOST'] || 'http://localhost';
+let url: string;
+const mode = process.env['MODE'] || 'local';
 const port = process.env['PORT'] ? +process.env['PORT'] : 8080;
-const url = `${host}:${port}/`;
+switch (mode) {
+  case 'local':
+    url = `http://localhost:${port}`
+    break;
+  case 'gae':
+    url = `https://${process.env['GOOGLE_CLOUD_PROJECT']}.appspot.com`;
+    break;
+  case 'functions':
+    break;
+  default:
+    throw new Error ("Unknown mode");
+}
 
 const func = async (req: express.Request, res: express.Response) => {
   if (typeof req.query.n === 'undefined' || req.query.n === null) {
@@ -26,4 +38,4 @@ const func = async (req: express.Request, res: express.Response) => {
   }
 };
 
-export {host, port, func};
+export {url, port, func};
