@@ -7,8 +7,10 @@
     "start": "node lib/index.js",
     "serve": "GOOGLE_CLOUD_PROJECT=\"$(gcloud config get-value core/project)\" node lib/index.js",
     "build": "./node_modules/.bin/tsc",
+    "build-docker": "gcloud builds submit --tag gcr.io/$(gcloud config get-value project)/fibonacci",
     "deploy-gae": "gcloud app deploy",
-    "deploy-gcf": "gcloud functions deploy fibonacci --set-env-vars MODE=gcf,GOOGLE_CLOUD_PROJECT=$(gcloud config get-value core/project) --entry-point=func --trigger-http --runtime=nodejs10"
+    "deploy-gcf": "gcloud functions deploy fibonacci --set-env-vars MODE=gcf,GOOGLE_CLOUD_PROJECT=$(gcloud config get-value core/project) --entry-point=func --trigger-http --runtime=nodejs10",
+    "deploy-run": "gcloud run deploy --image gcr.io/$(gcloud config get-value project)/fibonacci --platform managed"
   },
   "repository": {
     "type": "git",

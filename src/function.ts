@@ -32,7 +32,21 @@ const func = async (req: express.Request, res: express.Response) => {
     return;
   }
   try {
-    const requests = [request.get(`${url}?n=${n-1}`), request.get(`${url}?n=${n-2}`)];
+    const headers: {[key: string]:string} = {};
+    let traceContext = req.header('X-Cloud-Trace-Context');
+    if (typeof traceContext === 'string') {
+      // Force Stackdriver tracing
+      if (!traceContext.endsWith(';o=1')) {
+        traceContext += ';o=1';
+      }
+      console.log("Forwarding trace context", traceContext);
+      headers['X-Cloud-Trace-Context'] = traceContext;
+    }  else {
+      console.log("Didn't see X-Google-Trace-Context in", JSON.stringify(req.headers));
+    }
+    console.log("Sending headers", JSON.stringify(headers));
+    const opts = headers === {} ? undefined : {headers};
+    const requests = [request.get(`${url}?n=${n-1}`, opts), request.get(`${url}?n=${n-2}`, {headers})];
     const texts = await Promise.all(requests);
     const sum = +texts[0] + +texts[1];
     res.status(200).send(`${sum}`);
