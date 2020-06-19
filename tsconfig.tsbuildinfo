@@ -487,8 +487,8 @@
         "affectsGlobalScope": false
       },
       "./src/function.ts": {
-        "version": "9b0728034723606558d8516fcad962e61522818d071cb2ace81a3e0fc1ff32c0",
-        "signature": "4d8df5c02292e1c9171fe3ebcb36eabbb3e095824aef191c46c0e395217d9d9d",
+        "version": "fc5adf18e4dc89a5f46cf47221617ab5a426245a4325aeae66b362a791e0ab72",
+        "signature": "2c9c6e7aea5d2ca4fc3575adba670694e79a385179c0d1e17c8ad6ea57cdd658",
         "affectsGlobalScope": false
       },
       "./node_modules/@google-cloud/opentelemetry-cloud-trace-exporter/node_modules/@opentelemetry/api/build/src/common/logger.d.ts": {
@@ -1457,8 +1457,8 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "fadf7c7bdd8d9819b1de8291d179257890cadcc892ecc08d0dd0236708ce6c8b",
-        "signature": "39d9b1f7e2f2dfc53dc4cc7bd49cef70743697c69cf31f55337e66c1eee8884f",
+        "version": "e9a97a17634bd753e037e09c21cdf4ffcd810f921bb949000c56124fa3834d0c",
+        "signature": "36da0ccbf28cf5f646d6423bcf16b59d9c81f8b2d1a8750fd48c0c8666bb0c54",
         "affectsGlobalScope": false
       }
     },

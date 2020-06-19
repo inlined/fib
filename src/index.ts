@@ -19,8 +19,8 @@ if (projectId) {
 }
 
 import express from 'express';
-import {func, trampoline, url, port} from './function';
-export {func, trampoline};
+import {func, port} from './function';
+export {func};
 
 if (require.main === module) {
   const app = express();
@@ -36,6 +36,6 @@ if (require.main === module) {
   });
 
   app.listen(port, () => {
-    console.log(`server started at ${url}`);
+    console.log(`server started`);
   });
 }
